@@ -27,6 +27,9 @@ export default {
   methods: {
     addToCart(product) {
       this.$root.$data.cart.push(product);
+    },
+    getimg() {
+      console.log(this.$)
     }
   }
 }

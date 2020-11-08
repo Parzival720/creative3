@@ -5,26 +5,26 @@
       <span class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn my-2 my-sm-0" type="submit">
-          <img src="../images/search.png" width=20 height=20/>
+          <img src="/images/search.png" width=20 height=20/>
         </button>
       </span>
       </div>
       <div id="brand">
         <router-link to="/">
-          <img src="../images/cpu.png">
+          <img src="/images/cpu.png">
         </router-link>
         <h1>Gleek Skwad</h1>
       </div>
       <div id="side">
         <router-link to="/browse">
           <div class="menu-item browse">
-            <img src="../images/globe.png">
+            <img src="/images/globe.png">
             <p>Browse</p>
           </div>
         </router-link>
         <router-link to="/cart">
           <div class="menu-item">
-            <img src="../images/love.png">
+            <img src="/images/love.png">
             <p>{{itemsInCart}} items</p>
           </div>
         </router-link>

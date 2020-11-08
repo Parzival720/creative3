@@ -59,21 +59,21 @@ let mock = [{
       name: "Bolt",
       price: "$59.99",
       description: "Meet man's NEW best friend!",
-      image: 'robot-dog.jpg'
+      image: 'robot-dog.png'
   },
   {
       id: 10,
       name: "Desktop Helper Mini",
       price: "$19.99",
       description: "Get this cute robot who can help you find bugs in your code using the Rubber Ducky technique!",
-      image: 'robot-toy.jpg'
+      image: 'robot-toy.png'
   },
   {
       id: 11,
       name: "iPhone 50S",
       price: "$899.99",
       description: "The latest release from Apple, now includes slidable keypad for an even bigger display!",
-      image: 'slider.jpg'
+      image: 'slider.png'
   },
   {
       id: 12,
@@ -81,6 +81,13 @@ let mock = [{
       price: "$99.99",
       description: "Good guy. will work for food. VR Headset not included",
       image: 'vr.jpg'
+  },
+  {
+      id: 13,
+      name: "Baguette",
+      price: "$99.99",
+      description: "Good guy. will work for food. VR Headset not included",
+      image: 'baguette.jpg'
   }
 ]
 
