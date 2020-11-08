@@ -15,11 +15,12 @@
       </div>
     </div>
   </div>
-</div>
-<div class="cart-info-wrapper">
-  <div class="cart-info">
+  <div class="cart-info-wrapper">
+    <div class="cart-info">
+    </div>
   </div>
 </div>
+
 </template>
 
 <script>
