@@ -7,7 +7,7 @@
           <p>{{product.description}}</p>
         </div>
         <div class="image">
-          <img :src="'/src/assets/tech/'+product.image">
+          <img :src="'/images/tech/'+product.image">
         </div>
         <div class="price">
           <h2>{{product.price}}</h2>
