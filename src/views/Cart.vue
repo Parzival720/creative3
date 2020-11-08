@@ -2,21 +2,31 @@
 <div class="wrapper">
   <div class="products">
     <div class="product" v-for="product in cartItems" :key="product.id">
-      <div class="info">
-        <h1>{{product.name}}</h1>
-        <p>{{product.country}}</p>
-      </div>
-      <div class="image">
-          <img :src="'/images/tech/'+product.image">
+      <div @click="selectProduct(product)">
+        <div class="info">
+          <h1>{{product.name}}</h1>
+          <p>{{product.country}}</p>
+        </div>
+        <div class="image">
+            <img :src="'/images/tech/'+product.image">
+        </div>
       </div>
       <div class="price">
-        <h2>{{product.price}}</h2>
+        <h2>${{product.price}}</h2>
         <button class="auto" @click="removeFromCart(product)">Remove from Cart</button>
       </div>
     </div>
   </div>
   <div class="cart-info-wrapper">
     <div class="cart-info">
+      <div v-if="emptyCart">
+        <p>There are no items in your cart. Go check out the collection!</p>
+      </div>
+      <div v-else>
+        <div class="total">
+          <p>Total: ${{totalCost}}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -29,12 +39,26 @@ export default {
   computed: {
     cartItems() {
       return this.$root.$data.cart;
+    },
+    emptyCart() {
+      if (this.$root.$data.cart.length == 0) {
+        return true;
+      }
+      return false;
+    },
+    totalCost() {
+      return this.$root.$data.cart.reduce((total, item) => { return total + item.price; }, 0).toFixed(2);
     }
   },
   methods: {
     removeFromCart(product) {
       var index = this.$root.$data.cart.indexOf(product);
       this.$root.$data.cart.splice(index, 1);
+    },
+    selectProduct(product) {
+      console.log(product);
+      this.$root.$data.selected = product;
+      this.$router.push('/about');
     }
   }
 }
@@ -116,12 +140,24 @@ button {
 }
 
 .cart-info-wrapper {
+  border: solid 5px #F64C72;
   border-radius: 5px;
   background-color: #fff;
   width: 500px;
   height: 50px;
   display: flex;
   justify-content: space-around;
+}
+
+.cart-info {
+  display: flex;
+}
+
+.total {
+
+  display: flex;
+  justify-self: flex-end;
+  margin-left: auto;
 }
 
 .auto {

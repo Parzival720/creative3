@@ -2,15 +2,18 @@
   <div class="wrapper">
     <div class="products">
       <div class="product" v-for="product in products" :key="product.id">
-        <div class="info">
-          <h1>{{product.name}}</h1>
-          <p>{{product.description}}</p>
+        <div @click="selectProduct(product)">
+          <div class="info">
+            <h1>{{product.name}}</h1>
+            <p>{{product.description}}</p>
+          </div>
+          <div class="image">
+            <img :src="'/images/tech/'+product.image">
+          </div>
         </div>
-        <div class="image">
-          <img :src="'/images/tech/'+product.image">
-        </div>
+
         <div class="price">
-          <h2>{{product.price}}</h2>
+          <h2>${{product.price}}</h2>
           <button class="auto" @click="addToCart(product)">Add to Cart</button>
         </div>
       </div>
@@ -28,14 +31,21 @@ export default {
     addToCart(product) {
       this.$root.$data.cart.push(product);
     },
-    getimg() {
-      console.log(this.$)
+    selectProduct(product) {
+      console.log(product);
+      this.$root.$data.selected = product;
+      this.$router.push('/about');
     }
   }
 }
 </script>
 
 <style scoped>
+a {
+    text-decoration: none;
+    color: #333;
+}
+
 .wrapper {
   display: flex;
   align-items: center;
@@ -75,20 +85,21 @@ export default {
   border-radius: 5px;
   padding: 10px 30px;
   height: 120px;
+  text-decoration: none;
 }
 
 .info h1 {
-  font-size: 16px;
+  font-size: 17px;
   text-align: center;
 }
 
 .info h2 {
-  font-size: 14px;
+  font-size: 17px;
 }
 
 .info p {
   margin: 0px;
-  font-size: 10px;
+  font-size: 15px;
 }
 
 

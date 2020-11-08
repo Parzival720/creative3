@@ -1,11 +1,12 @@
 <template>
 <div>
   <div class="pure-menu pure-menu-horizontal">
+    <h1>Filter Products by Price Range!</h1>
     <ul class="pure-menu-list">
-      <li class="pure-menu-item"><a @click="select('United States')" href="#" class="pure-menu-link">United States</a></li>
-      <li class="pure-menu-item"><a @click="select('Canada')" href="#" class="pure-menu-link">Canada</a></li>
-      <li class="pure-menu-item"><a @click="select('Mexico')" href="#" class="pure-menu-link">Mexico</a></li>
-      <li class="pure-menu-item"><a @click="select('Brazil')" href="#" class="pure-menu-link">Brazil</a></li>
+      <li class="pure-menu-item"><a @click="select(10)" href="#" class="pure-menu-link">&lt; 10</a></li>
+      <li class="pure-menu-item"><a @click="select(50)" href="#" class="pure-menu-link">&lt; 50</a></li>
+      <li class="pure-menu-item"><a @click="select(100)" href="#" class="pure-menu-link">&lt; 100</a></li>
+      <li class="pure-menu-item"><a @click="select(1000)" href="#" class="pure-menu-link">&lt; 1000</a></li>
     </ul>
   </div>
   <ProductList :products="products" />
@@ -21,18 +22,28 @@ export default {
   },
   data() {
     return {
-      country: '',
+      priceMax: 0,
     }
   },
   computed: {
     products() {
-      return this.$root.$data.products.filter(product => product.country === this.country);
+      return this.$root.$data.products.filter(product => product.price < this.priceMax);
     }
   },
   methods: {
-    select(country) {
-      this.country = country;
+    select(priceMax) {
+      this.priceMax = priceMax;
     }
   }
 }
 </script>
+
+<style>
+  .pure-menu {
+    width: 400px;
+    padding: 10px;
+    background-color: #99738E;
+    border: 5px solid #F64C72;
+    border-radius: 5px;
+  }
+</style>
