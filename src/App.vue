@@ -1,10 +1,19 @@
 <template>
   <div id="app">
     <div id="menu">
+      <div id="left">
+      <span class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn my-2 my-sm-0" type="submit">
+          <img src="../images/search.png" width=20 height=20/>
+        </button>
+      </span>
+      </div>
       <div id="brand">
         <router-link to="/">
-          <img src="../images/logo.png">
+          <img src="../images/cpu.png">
         </router-link>
+        <h1>Gleek Skwad</h1>
       </div>
       <div id="side">
         <router-link to="/browse">
@@ -22,15 +31,17 @@
       </div>
     </div>
     <router-view />
+
     <div id="gitFooter" class="footer-container">
       <div class='footer'>
-        <a class="github-link" href='https://github.com/BYU-CS-260-Winter-2020/lab-3b-grocery-store-Parzival720' target='_blank'>
+        <a class="github-link" href='https://github.com/Parzival720/creative3' target='_blank'>
           <img src="../images/github.png" class="small-icon"  width="50" height="30">
           Link to GitHub repository
         </a>
         <div class='copyright'>
           <p>All Content Copyrighted by Recursive Outfitters</p>
         </div>
+        Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
       </div>
     </div>
   </div>
@@ -48,21 +59,27 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 50px 100px;
-
+  background-color: #2F2FA2 !important;
 }
+
 
 #menu {
   display: grid;
+  padding: 20px;
+  border-radius: 5px;
+  border: solid 20px #F64C72;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 5px;
-  grid-template-areas: "none brand side";
+  grid-template-areas: "left brand side";
   margin-bottom: 50px;
+  background-color: #99738E !important;
 }
 
 #menu a {
@@ -73,16 +90,30 @@ body {
   grid-area: brand;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  font-family: 'Oswald', sans-serif;
+}
+
+#brand h1 {
+  padding-left: 20px;
 }
 
 #brand img {
   height: 200px;
 }
 
+#left {
+  grid-area: left;
+  display: flex;
+  justify-content: flex-start;
+  align-self: center;
+}
+
 #side {
   grid-area: side;
   display: flex;
   justify-content: flex-end;
+  align-self: center;
 }
 
 #side img {
@@ -92,6 +123,7 @@ body {
 .menu-item {
   display: flex;
   flex-direction: column;
+  color: #242582
 }
 
 .menu-item p {

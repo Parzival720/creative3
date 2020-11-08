@@ -25,7 +25,7 @@ export default {
   },
   computed: {
     products() {
-      return this.$root.$data.products.filter(product => product.name.toLowerCase().search(this.searchText) >= 0);
+      return this.$root.$data.products.filter(product => product.name.toLowerCase().search(this.searchText.toLowerCase()) >= 0);
     }
   },
 }
@@ -51,8 +51,6 @@ form {
 
 i {
   display: table-cell;
-  padding-left: 10px;
-  width: 1px;
 }
 
 input {

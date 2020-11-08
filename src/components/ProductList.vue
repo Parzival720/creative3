@@ -4,10 +4,10 @@
       <div class="product" v-for="product in products" :key="product.id">
         <div class="info">
           <h1>{{product.name}}</h1>
-          <p>{{product.country}}</p>
+          <p>{{product.description}}</p>
         </div>
         <div class="image">
-          <img :src="'/images/products/'+product.image">
+          <img :src="'/src/assets/tech/'+product.image">
         </div>
         <div class="price">
           <h2>{{product.price}}</h2>
@@ -47,15 +47,17 @@ export default {
 }
 
 .product {
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #000;
   margin: 10px;
   margin-top: 50px;
-  width: 200px;
+  width: 250px;
 }
 
 .product img {
-  border: 2px solid #333;
-  height: 250px;
-  width: 200px;
+  height: 200px;
+  width: 250px;
   object-fit: cover;
 }
 
@@ -66,14 +68,15 @@ export default {
 }
 
 .info {
-  background: #F2921D;
-  color: #000;
+  background: #F64C72;
+  border-radius: 5px;
   padding: 10px 30px;
-  height: 80px;
+  height: 120px;
 }
 
 .info h1 {
   font-size: 16px;
+  text-align: center;
 }
 
 .info h2 {
@@ -88,13 +91,19 @@ export default {
 
 .price {
   display: flex;
+  padding-left: 25px;
+  background-color: #552D67;
+  color: #fff;
 }
 
 button {
   height: 50px;
+  border-radius: 5px;
   background: #000;
   color: white;
   border: none;
+  margin-top: 5px;
+  margin-right: 20px;
 }
 
 .auto {

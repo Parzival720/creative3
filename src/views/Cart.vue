@@ -16,6 +16,10 @@
     </div>
   </div>
 </div>
+<div class="cart-info-wrapper">
+  <div class="cart-info">
+  </div>
+</div>
 </template>
 
 <script>
@@ -50,15 +54,17 @@ export default {
 }
 
 .product {
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #000;
   margin: 10px;
   margin-top: 50px;
-  width: 200px;
+  width: 250px;
 }
 
 .product img {
-  border: 2px solid #333;
-  height: 250px;
-  width: 200px;
+  height: 200px;
+  width: 250px;
   object-fit: cover;
 }
 
@@ -69,14 +75,15 @@ export default {
 }
 
 .info {
-  background: #0EBFE9;
-  color: #000;
+  background: #97CAEF;
+  border-radius: 5px;
   padding: 10px 30px;
-  height: 80px;
+  height: 70px;
 }
 
 .info h1 {
   font-size: 16px;
+  text-align: center;
 }
 
 .info h2 {
@@ -91,13 +98,27 @@ export default {
 
 .price {
   display: flex;
+  padding-left: 25px;
+  background-color: #552D67;
+  color: #fff;
 }
 
 button {
   height: 50px;
+  border-radius: 5px;
   background: #000;
   color: white;
   border: none;
+  margin-top: 5px;
+  margin-right: 20px;
+}
+
+.cart-info-wrapper {
+  background-color: #fff;
+  width: 500px;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .auto {
