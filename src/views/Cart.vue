@@ -118,7 +118,7 @@ button {
 .cart-info-wrapper {
   border-radius: 5px;
   background-color: #fff;
-
+  width: 500px;
   height: 50px;
   display: flex;
   justify-content: space-around;
